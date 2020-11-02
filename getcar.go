@@ -101,7 +101,7 @@ func getCar(w http.ResponseWriter, r *http.Request) {
 
         w.WriteHeader(200)
 
-        fmt.Fprintln(w, statement, "Hola v3. ID = ", id, ", Brand =", brand, ", Model =", model, ", Horse Power =", horsepow)
+        fmt.Fprintln(w, vars["id"], "Hola v3. ID = ", id, ", Brand =", brand, ", Model =", model, ", Horse Power =", horsepow)
 
     }
     conn.Close()
