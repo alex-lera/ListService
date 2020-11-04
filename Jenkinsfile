@@ -18,21 +18,9 @@ pipeline {
     }
 
     stage('Build-go') {
-      parallel {
-        stage('Build-go') {
-          steps {
-            echo 'Compiling and building'
-            sh 'go build getcar.go'
-          }
-        }
-
-        stage('Test DB') {
-          steps {
-            sh 'go test'
-            catchError(catchInterruptions: true, message: 'Ha fallado la bd', buildResult: 'Error')
-          }
-        }
-
+      steps {
+        echo 'Compiling and building'
+        sh 'go build getcar.go'
       }
     }
 
